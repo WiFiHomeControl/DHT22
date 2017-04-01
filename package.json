@@ -1,0 +1,14 @@
+{
+  "name": "dht22",
+  "version": "1.0.0",
+  "description": "Simple example for reading out a DHT via WiFi running the .ino Script in this repo!",
+  "main": "ReadDHT22.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Sacher <tomnik104@yahoo.de>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
