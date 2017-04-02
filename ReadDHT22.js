@@ -18,11 +18,14 @@ request(`http://${ip}:${port}`, (err, response, body) => {
         //Everything fine
         case 200:
             const jsonbody = JSON.parse(body);
-            console.log(`We have ${jsonbody.temperature} Degrees and a humidity of ${jsonbody.humidity}%`);
+
+            const einheit = jsonbody.fahreneheit ? "Fahrenheit" : "Celsius";
+
+            console.log(`We have ${jsonbody.temperature} ${einheit} and a humidity of ${jsonbody.humidity}%`);
             break;
         //Damn - 500. ESP sends 500 when the ESP read fails
         case 500:
-            console.error('The ESP returned 500. This could happen when the ESP isnt connected correctly');
+            console.error('The ESP returned 500. This could happen when the DHT isnt connected correctly');
             break;
         //Any other error code
         default:
